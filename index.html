@@ -1,12 +1,27 @@
+<!--
+  index.html - https://github.com/yoggy/qrcode-test.js
+  
+  license:
+      Copyright (c) 2017 yoggy <yoggy0@gmail.com>
+      Released under the MIT license
+      http://opensource.org/licenses/mit-license.php;
+-->
 <Html>
 
 <head>
     <meta charset="utf-8">
     <title>qrcode-test.js</title>
-    <script src="qrcode.js"></script>
+
+    <!-- bootstrap http://getbootstrap.com -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
+    <!-- qrcode.js https://davidshimjs.github.io/qrcodejs/ -->
+    <script src="qrcode.js"></script>
+
+    <!-- vue.js https://jp.vuejs.org/ -->
+    <script src="https://unpkg.com/vue"></script>
 </head>
 
 <body>
@@ -17,12 +32,19 @@
             </div>
         </div>
         <div class="row">
+            <div class="col">
+                <div id="url_input_component" v-on:input="on_update">
+                    URL : <input v-model="url" size=50>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col" style="padding:2em">
                 <div id="qrcode-container"></div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="qrcode-test.js"></script>
 </body>
 
 </Html>
